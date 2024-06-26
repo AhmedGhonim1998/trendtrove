@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import logo from "../assets/images/logo/logo.png";
-
+import { BsInfoSquareFill } from "react-icons/bs";
 export default function NavItems() {
     const [menuToggle, setMenuToggle] = useState(false);
     const [socialToggle, setSocialToggle] = useState(false);
@@ -27,7 +27,7 @@ export default function NavItems() {
     return (
         <>
             <header className={`header-section style-4 ${headerFixed ? "header-fixed fadeInUp" : ""}`}>
-                {/** header top start **/}
+                {/************************ header top start ***************************************/}
                 <div className={`header-top d-md-none ${socialToggle ? "open" : ""}`}>
                     <Container>
                         <div className="header-top-area">
@@ -37,7 +37,7 @@ export default function NavItems() {
                     </Container>
                 </div>
 
-                {/** header bottom **/}
+                {/********************************** header bottom ***********************************/}
                 <div className="header-bottom">
                     <Container>
                         <div className="header-wrapper">
@@ -53,15 +53,27 @@ export default function NavItems() {
                             {/* menu area */}
                             <div className="menu-area">
                                 <div className="menu">
-                                    <ul className={`lab-ul ${menuToggle? "active":""}`}>
+                                    <ul className={`lab-ul ${menuToggle ? "active" : ""}`}>
                                         <li><Link lo="/" className='text-capitalize text-decoration-none'>home</Link></li>
                                         <li><Link lo="/shop" className='text-capitalize text-decoration-none'>shop</Link></li>
                                         <li><Link lo="/blog" className='text-capitalize text-decoration-none'>blog</Link></li>
                                         <li><Link lo="/about" className='text-capitalize text-decoration-none'>about</Link></li>
                                         <li><Link lo="/contact" className='text-capitalize text-decoration-none'>contact</Link></li>
                                     </ul>
+                                </div>
+                                {/* sign in & login */}
+                                <Link to="/signup" className='text-capitalize text-decoration-none lab-btn me-3 d-none d-md-block'>create account</Link>
+                                <Link to="/login" className='text-capitalize text-decoration-none d-none d-md-block'>login</Link>
 
-                                    <Link to="/signup" className='text-capitalize'>create account</Link>
+                                {/*menu toggler*/}
+                                <div onClick={() => setMenuToggle(!menuToggle)} className={`header-bar d-lg-none ${menuToggle ? "active" : ""}`}>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                {/* social toggler */}
+                                <div className='ellepsis-bar d-md-none' onClick={()=>setSocialToggle(!socialToggle)}>
+                                    <BsInfoSquareFill className='info'/>
                                 </div>
                             </div>
                         </div>
