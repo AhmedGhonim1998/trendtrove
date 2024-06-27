@@ -7,7 +7,9 @@ export default function NavItems() {
     const [menuToggle, setMenuToggle] = useState(false);
     const [socialToggle, setSocialToggle] = useState(false);
     const [headerFixed, setHeaderFixed] = useState(false);
-
+    let scrollUp=()=>{
+        window.scroll(0,0);
+    }
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 200) {
@@ -54,11 +56,11 @@ export default function NavItems() {
                             <div className="menu-area">
                                 <div className="menu">
                                     <ul className={`lab-ul ${menuToggle ? "active" : ""}`}>
-                                        <li><Link to="/" className='text-capitalize text-decoration-none' onClick={() => setMenuToggle(false)}>home</Link></li>
-                                        <li><Link to="/shop" className='text-capitalize text-decoration-none' onClick={() => setMenuToggle(false)}>shop</Link></li>
-                                        <li><Link to="/blog" className='text-capitalize text-decoration-none' onClick={() => setMenuToggle(false)}>blog</Link></li>
-                                        <li><Link to="/about" className='text-capitalize text-decoration-none' onClick={() => setMenuToggle(false)}>about</Link></li>
-                                        <li><Link to="/contact" className='text-capitalize text-decoration-none' onClick={() => setMenuToggle(false)}>contact</Link></li>
+                                        <li onClick={scrollUp}><Link to="/" className='text-capitalize text-decoration-none' onClick={() => setMenuToggle(false)}>home</Link></li>
+                                        <li onClick={scrollUp}><Link to="/shop" className='text-capitalize text-decoration-none' onClick={() => setMenuToggle(false)}>shop</Link></li>
+                                        <li onClick={scrollUp}><Link to="/blog" className='text-capitalize text-decoration-none' onClick={() => setMenuToggle(false)}>blog</Link></li>
+                                        <li onClick={scrollUp}><Link to="/about" className='text-capitalize text-decoration-none' onClick={() => setMenuToggle(false)}>about</Link></li>
+                                        <li onClick={scrollUp}><Link to="/contact" className='text-capitalize text-decoration-none' onClick={() => setMenuToggle(false)}>contact</Link></li>
                                     </ul>
                                 </div>
                                 {/* sign in & login */}

@@ -1,3 +1,25 @@
-.info{
-    color: #f16126;
+.info {
+  color: #f16126;
+}
+.categoty-icon {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #ffdf40;
+    text-align: center;
+    border-radius: 100%;
+    margin-right: 2%;
+    i{
+        color: black;
+    }
+}
+.image-overlay-content{
+    bottom: 0;
+}
+.card-category{
+    border: none !important;
+    // background-image: linear-gradient(#343a408a,#343a408a) !important;
+}
+.link-category{
+    font-weight: bold;
 }
