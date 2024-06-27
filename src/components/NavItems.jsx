@@ -54,11 +54,11 @@ export default function NavItems() {
                             <div className="menu-area">
                                 <div className="menu">
                                     <ul className={`lab-ul ${menuToggle ? "active" : ""}`}>
-                                        <li><Link lo="/" className='text-capitalize text-decoration-none'>home</Link></li>
-                                        <li><Link lo="/shop" className='text-capitalize text-decoration-none'>shop</Link></li>
-                                        <li><Link lo="/blog" className='text-capitalize text-decoration-none'>blog</Link></li>
-                                        <li><Link lo="/about" className='text-capitalize text-decoration-none'>about</Link></li>
-                                        <li><Link lo="/contact" className='text-capitalize text-decoration-none'>contact</Link></li>
+                                        <li><Link to="/" className='text-capitalize text-decoration-none' onClick={() => setMenuToggle(false)}>home</Link></li>
+                                        <li><Link to="/shop" className='text-capitalize text-decoration-none' onClick={() => setMenuToggle(false)}>shop</Link></li>
+                                        <li><Link to="/blog" className='text-capitalize text-decoration-none' onClick={() => setMenuToggle(false)}>blog</Link></li>
+                                        <li><Link to="/about" className='text-capitalize text-decoration-none' onClick={() => setMenuToggle(false)}>about</Link></li>
+                                        <li><Link to="/contact" className='text-capitalize text-decoration-none' onClick={() => setMenuToggle(false)}>contact</Link></li>
                                     </ul>
                                 </div>
                                 {/* sign in & login */}
