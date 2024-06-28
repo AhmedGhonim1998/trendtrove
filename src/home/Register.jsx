@@ -1,0 +1,41 @@
+import React from 'react';
+import { Container } from 'react-bootstrap';
+
+const subTitle = "save the day";
+const title = (
+    <h2 className='text-capitalize title'>join on the day long free workshop for <b>advance <span>mastering</span>on sales</b></h2>
+);
+const desc = "limited time offer! hurry up";
+
+const Register = () => {
+    return (
+        <>
+            <section className='register-section padding-tb pb-0'>
+                <Container>
+                    <div className="row g-4 row-cols-lg-2 row-cols-1 align-items-center">
+                        <div className="col">
+                            <div className="section-header">
+                                <span className='text-capitalize subtitle'>{subTitle}</span>
+                                {title}
+                                <p className='text-capitalize'>{desc}</p>
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div className="section-wrapper">
+                                <h4 className='text-capitalize'>register now</h4>
+                                <form className='register-form'>
+                                    <input type="text" name='name' placeholder='Username' className='reg-input' />
+                                    <input type="email" name='email' placeholder='Email' className='reg-input' />
+                                    <input type="number" name='number' placeholder='Phone' className='reg-input' />
+                                    <button type='submit' className='lab-btn text-capitalize'>register now</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </Container>
+            </section>
+        </>
+    );
+}
+
+export default Register;
