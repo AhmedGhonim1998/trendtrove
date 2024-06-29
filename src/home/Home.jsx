@@ -4,6 +4,7 @@ import HomeCategory from './HomeCategory'
 import CategoryShowCase from './CategoryShowCase'
 import Register from './Register'
 import LocationMap from './LocationMap'
+import AboutUS from './AboutUS'
 export default function Home() {
   return (
     <>
@@ -12,6 +13,7 @@ export default function Home() {
     <CategoryShowCase/>
     <Register/>
     <LocationMap/>
+    <AboutUS/>
     </>
   )
 }

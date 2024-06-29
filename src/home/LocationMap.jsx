@@ -9,37 +9,37 @@ const clientsList = [
     {
         imgUrl: '/src/assets/images/clients/avater.jpg',
         imgAlt: 'education thumb rajibraj91 rajibraj',
-        text: 'From Canada',
+        text: 'Join with us',
     },
     {
         imgUrl: '/src/assets/images/clients/avater.jpg',
         imgAlt: 'education thumb rajibraj91 rajibraj',
-        text: 'From Green Land',
+        text: 'Join with us',
     },
     {
         imgUrl: '/src/assets/images/clients/avater.jpg',
         imgAlt: 'education thumb rajibraj91 rajibraj',
-        text: 'From Russia',
+        text: 'Join with us',
     },
     {
         imgUrl: '/src/assets/images/clients/avater.jpg',
         imgAlt: 'education thumb rajibraj91 rajibraj',
-        text: 'From Brazil',
+        text: 'Join with us',
     },
     {
         imgUrl: '/src/assets/images/clients/avater.jpg',
         imgAlt: 'education thumb rajibraj91 rajibraj',
-        text: 'From Libya',
+        text: 'Join with us',
     },
     {
         imgUrl: '/src/assets/images/clients/avater.jpg',
         imgAlt: 'education thumb rajibraj91 rajibraj',
-        text: 'From Japan',
+        text: 'Join with us',
     },
     {
         imgUrl: '/src/assets/images/clients/avater.jpg',
         imgAlt: 'education thumb rajibraj91 rajibraj',
-        text: 'From Russia',
+        text: 'Join with us',
     },
 ]
 const LocationMap = () => {
