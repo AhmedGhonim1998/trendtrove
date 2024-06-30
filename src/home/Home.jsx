@@ -5,6 +5,8 @@ import CategoryShowCase from './CategoryShowCase'
 import Register from './Register'
 import LocationMap from './LocationMap'
 import AboutUS from './AboutUS'
+import AppSection from './AppSection'
+import Sponsor from './Sponsor'
 export default function Home() {
   return (
     <>
@@ -14,6 +16,8 @@ export default function Home() {
     <Register/>
     <LocationMap/>
     <AboutUS/>
+    <AppSection/>
+    <Sponsor/>
     </>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { Container } from 'react-bootstrap';
 import CountUp from 'react-countup';
 import { Link } from 'react-router-dom';
+import imageInstructor from '../assets/images/instructor/01.png'
 const subTitle = "Why Choose Us";
 const title = "Become a Marchant";
 const desc = "Take courses on your any device with our app & learn all about business what you want. Just download & install & start to learn";
@@ -30,7 +31,7 @@ const AboutUS = () => {
         <div className="instructor-section style-2 padding-tb section-bg-ash">
             <Container>
                 <div className="section-wrapper">
-                    <div className="row">
+                    <div className="row g-4 justify-content-center align-items-center row-cols-1 row-cols-md-2 row-cols-xl-3">
                         <div className="col">
                             {
                                 countList.map((val, i) => (
@@ -56,7 +57,12 @@ const AboutUS = () => {
                                 <p className='subtitle'>{subTitle}</p>
                                 <h2 className='title'>{title}</h2>
                                 <p>{desc}</p>
-                                <Link to="/sign-up" className='lab-btn text-decoration-none text-capitalize'>apply now</Link>
+                                <Link to="/sign-up" className='lab-btn text-decoration-none text-capitalize'>{btnText}</Link>
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div className="instructor-thumb">
+                                <img src={imageInstructor} alt="img" />
                             </div>
                         </div>
                     </div>
