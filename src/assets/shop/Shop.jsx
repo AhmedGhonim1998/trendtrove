@@ -14,7 +14,7 @@ const Shop = () => {
     const productsParPage = 12;
 
     const indexOfLastProduct = currentPage * productsParPage;
-    const indexOfFirstProduct = indexOfFirstProduct - productsParPage;
+    const indexOfFirstProduct = indexOfLastProduct - productsParPage;
     const currentProducts = products.slice(indexOfFirstProduct , indexOfLastProduct);
 
     //function to change the current page
@@ -44,7 +44,7 @@ const Shop = () => {
                                 </div>
                                 {/* product cards */}
                                 <div>
-                                    <ProductCards gridList={gridList} products={products} />
+                                    <ProductCards gridList={gridList} products={currentProducts} />
                                 </div>
                                 <PageNation 
                                 productsParPage={productsParPage}
