@@ -24,7 +24,7 @@ const Search = ({ products, gridList }) => {
                                         <img src={product.img} alt="img" width={70} className='flex-{grow|shrink}-0 imgContainer' />
                                     </div>
                                 </div>
-                                <div className="product-content">
+                                <div className="product-content my-auto">
                                     <p className='ms-2 mb-0'>
                                         <Link to={`/shop/${product.id}`} className='text-decoration-none text-black fs-6'>{product.name}</Link>
                                     </p>
