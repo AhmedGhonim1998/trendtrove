@@ -28,3 +28,12 @@
         text-decoration: none;
     }
 }
+.imageFetch{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    .imgContainer{
+        width: 100%;
+        object-fit: contain;
+    }
+}
