@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import Data from '../../products.json';
 import ProductCards from './ProductCards';
 import PageNation from './PageNation';
+import Search from './Search';
 const showResult = "showing 01-12 of 139 results";
 const Shop = () => {
     const [gridList, setGridList] = useState(true);
@@ -55,7 +56,9 @@ const Shop = () => {
                             </article>
                         </div>
                         <div className="col-lg-4 col-12">
-                            right side
+                            <aside>
+                                <Search products={products} gridList={gridList}/>
+                            </aside>
                         </div>
                     </div>
                 </Container>

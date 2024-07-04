@@ -5,8 +5,8 @@ const ProductCards = ({gridList , products}) => {
     return (
         <div className={`shop-product-wrap row justofy-content-center ${gridList?"grid":"list"}`}>
             {
-                products.map((product,i)=>(<div key={i} className='col-lg-4 col-md-6 col-12'>
-                    <div className="product-item">
+                products.map((product,i)=>(<div key={i} className='col-lg-4 col-md-6 col-12 mb-4'>
+                    <div className="product-item h-100">
                         {/* product images */}
                         <div className="product-thumb">
                             <div className="pro-thumb">
