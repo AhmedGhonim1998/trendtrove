@@ -7,6 +7,7 @@ import PageNation from './PageNation';
 import Search from './Search';
 import ShopCategory from './ShopCategory';
 import PopularPost from './PopularPost';
+import Tags from './Tags';
 const showResult = "showing 01-12 of 139 results";
 const Shop = () => {
     const [gridList, setGridList] = useState(true);
@@ -78,6 +79,7 @@ const Shop = () => {
                                 SelectedCategory={setSelectedCategory}
                                 />
                                 <PopularPost/>
+                                <Tags/>
                             </aside>
                         </div>
                     </div>
