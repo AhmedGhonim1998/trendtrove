@@ -2,6 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Rating from '../../components/Rating'
 const ProductCards = ({gridList , products}) => {
+    let scrollUp=()=>{
+        window.scroll(0,0);
+    }
     return (
         <div className={`shop-product-wrap row justofy-content-center ${gridList?"grid":"list"}`}>
             {
@@ -14,7 +17,7 @@ const ProductCards = ({gridList , products}) => {
                             </div>
                             {/* product action links */}
                             <div className="product-action-link">
-                                <Link to={`/shop/${product.id}`} className="text-decoration-none"><i className='icofont-eye'></i></Link>
+                                <Link to={`/shop/${product.id}`} onClick={scrollUp} className="text-decoration-none"><i className='icofont-eye'></i></Link>
                                 <a href="#" className='text-decoration-none'>
                                     <i className='icofont-heart'></i>
                                 </a>

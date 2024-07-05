@@ -8,6 +8,7 @@ import NavItems from './components/NavItems'
 import Footer from './components/Footer'
 import Shop from './assets/shop/Shop'
 import Bolg from './blog/Bolg'
+import SingleProduct from './assets/shop/SingleProduct'
 function App() {
 
 
@@ -19,6 +20,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/shop' element={<Shop />} />
           <Route path='/blog' element={<Bolg />} />
+          <Route path='/shop/:id' element={<SingleProduct/>}/>
         </Routes>
       </div>
       <Footer />
