@@ -35,13 +35,13 @@ const ProductDisplay = ({ item }) => {
         }
         const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
         const existingProductIndex = existingCart.findIndex((item) => item.id === id);
-        if (existingProductIndex !== -1){
+        if (existingProductIndex !== -1) {
             existingCart[existingProductIndex].quantity += preQuantity;
-        }else{
+        } else {
             existingCart.push(product);
         }
         //update local storage
-        localStorage.setItem("cart",JSON.stringify(existingCart));
+        localStorage.setItem("cart", JSON.stringify(existingCart));
         //reset from fields
         steQuantity(1);
         setSize("Select Size");
