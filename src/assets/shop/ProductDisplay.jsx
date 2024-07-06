@@ -1,17 +1,45 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 const desc = "Energistia an deliver atactica metrcs after avsionary Apropria trnsition enterprise an sources applications emerging psd template.";
 const ProductDisplay = ({ item }) => {
-    const { name, id, price, seller, ratingsCount, quantity } = item;
+    const { name, id, price, seller, ratingsCount, quantity, img } = item;
     const [preQuantity, steQuantity] = useState(quantity);
     const [coupon, setCoupon] = useState("");
     const [size, setSize] = useState("Select Size");
     const [color, setColor] = useState("Select Color");
-
     const handleSizeChange = (e) => {
         setSize(e.target.value);
     }
     const handleSizeColor = (e) => {
         setColor(e.target.value);
+    }
+    const handleDecrease = () => {
+        if (preQuantity > 1) {
+            steQuantity(preQuantity - 1)
+        }
+    }
+    const handleIncecrease = () => {
+        steQuantity(preQuantity + 1)
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const product = {
+            id: id,
+            img: img,
+            name: name,
+            price: price,
+            quantity: preQuantity,
+            size: size,
+            color: color,
+            coupon: coupon
+        }
+        const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+        const existingProductIndex = existingCart.findIndex((item) => item.id === id);
+        if (existingProductIndex !== -1){
+            existingCart[existingProductIndex].quantity += preQuantity
+        }else{
+            existingCart.push(product);
+        }
     }
     return (
         <div>
@@ -32,7 +60,7 @@ const ProductDisplay = ({ item }) => {
 
             {/* cart components */}
             <div className="">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="select-product size">
                         <select value={size} onChange={handleSizeChange}>
                             <option>Select Size</option>
@@ -58,10 +86,19 @@ const ProductDisplay = ({ item }) => {
 
                     {/* cart plus minus */}
                     <div className="cart-plus-minus">
-                        <div className="">-</div>
-                        <input type="text" name='qtybutton' id='qtybutton'/>
-                        <div className="">+</div>
+                        <div className="dec qtybutton" onClick={handleDecrease}>-</div>
+                        <input className='cart-plus-minus-box' type="text" name='qtybutton' id='qtybutton' value={preQuantity} onChange={(e) => steQuantity(parseInt(e.target.value, 10))} />
+                        <div className="inc qtybutton" onClick={handleIncecrease}>+</div>
                     </div>
+                    {/* coupon field */}
+                    <div className="discount-code">
+                        <input type="text" placeholder='Enter Discount Code' onChange={(e) => setCoupon(e.target.value)} />
+                    </div>
+
+                    {/* button section */}
+                    <button type='submit' className='lab-btn text-capitalize text-white'>add to cart</button>
+                    <Link to="/cart-page" type='submit' className='lab-btn text-capitalize text-white bg-primary text-decoration-none'>check out</Link>
+
                 </form>
             </div>
         </div>
