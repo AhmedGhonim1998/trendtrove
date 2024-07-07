@@ -48,6 +48,9 @@ const ProductDisplay = ({ item }) => {
         setColor("select Color");
         setCoupon("")
     }
+    let scrollUp=()=>{
+        window.scroll(0,0);
+    }
     return (
         <div>
             <div className="">
@@ -104,7 +107,7 @@ const ProductDisplay = ({ item }) => {
 
                     {/* button section */}
                     <button type='submit' className='lab-btn text-capitalize text-white'>add to cart</button>
-                    <Link to="/cart-page" type='submit' className='lab-btn text-capitalize text-white bg-primary text-decoration-none'>check out</Link>
+                    <Link to="/cart-page" type='submit' className='lab-btn text-capitalize text-white bg-primary text-decoration-none' onClick={scrollUp}>check out</Link>
 
                 </form>
             </div>
