@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules"
 import ProductDisplay from './ProductDisplay';
+import Rieview from './Rieview';
 const SingleProduct = () => {
     const [product, setProduct] = useState([]);
     const { id } = useParams();
@@ -77,7 +78,7 @@ const SingleProduct = () => {
                                 </div>
                                 {/* reviews */}
                                 <div className="review">
-                                    review
+                                    <Rieview/>
                                 </div>
                             </article>
                         </div>
