@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import Rating from '../../components/Rating';
+import descImg from "../images/shop/01.jpg"
 const reviwtitle = "Add a Review";
 
 let ReviewList = [
@@ -97,7 +98,27 @@ const Rieview = () => {
                     </div>
                 </div>
                 {/* description */}
-                
+                <div className="description">
+                    <p className='fs-6'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quos velit quaerat laudantium perferendis, maxime eaque at alias voluptatibus maiores blanditiis aspernatur rerum ipsam natus odio consequuntur explicabo, eligendi fugit voluptatem quo. Repellendus error facilis dolorum, facere dolorem vel quo, sed quis, ipsum corrupti nisi totam accusamus aliquid repudiandae. Sapiente! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quos velit quaerat laudantium perferendis, maxime eaque at alias voluptatibus maiores blanditiis aspernatur rerum ipsam natus odio consequuntur explicabo, eligendi fugit voluptatem quo. Repellendus error facilis dolorum, facere dolorem vel quo, sed quis, ipsum corrupti nisi totam accusamus aliquid repudiandae. Sapiente!</p>
+                    <div className="post-item">
+                        <div className="post-thumb">
+                            <img src={descImg} alt="img" />
+                        </div>
+                        <div className="post-content">
+                            <ul className='lab-ul'>
+                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <p className='fs-6'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quos velit quaerat laudantium perferendis, maxime eaque at alias voluptatibus maiores blanditiis aspernatur rerum ipsam natus odio consequuntur explicabo, eligendi fugit voluptatem quo. Repellendus error facilis dolorum, facere dolorem vel quo, sed quis, ipsum corrupti nisi totam accusamus aliquid repudiandae. Sapiente! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quos velit quaerat laudantium perferendis, maxime eaque at alias voluptatibus maiores blanditiis aspernatur rerum ipsam natus odio consequuntur explicabo, eligendi fugit voluptatem quo. Repellendus error facilis dolorum, facere dolorem vel quo, sed quis, ipsum corrupti nisi totam accusamus aliquid repudiandae. Sapiente!</p>
+                </div>
             </div>
         </>
     )

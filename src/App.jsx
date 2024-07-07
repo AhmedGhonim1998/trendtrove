@@ -21,6 +21,7 @@ function App() {
           <Route path='/shop' element={<Shop />} />
           <Route path='/blog' element={<Bolg />} />
           <Route path='/shop/:id' element={<SingleProduct/>}/>
+          <Route path='/cart-page' element={<SingleProduct/>}/>
         </Routes>
       </div>
       <Footer />
