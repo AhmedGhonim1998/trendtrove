@@ -98,7 +98,7 @@ const CartPage = () => {
                                                 </td>
                                                 <td className='cat-toprice'>${calculateTotalPrice(item)}</td>
                                                 <td className='car-edit'>
-                                                    <a href="#" onClick={()=>handleRemoveItem(item)}><img src={deImgUrt} alt="img" /></a>
+                                                    <a href="#" onClick={() => handleRemoveItem(item)}><img src={deImgUrt} alt="img" /></a>
                                                 </td>
                                             </tr>
                                         ))
@@ -107,6 +107,76 @@ const CartPage = () => {
                             </table>
                         </div>
                         {/* *********************** cart top end*************************************** */}
+                        {/* cart buttom */}
+                        <div className="cart-bottom">
+                            {/* checkout box */}
+                            <div className="cart-checkout-box">
+                                <form className='coupon'>
+                                    <input className='cart-page-input-text' type="text" name='coupon' id='coupon' placeholder='Coupon code' />
+                                    <input type="submit" value="Apply Coupon" />
+                                </form>
+                                <form className='cart-checkout'>
+                                    <input type="submit" value="Update Cart" />
+                                    <div className="">CheckoutPage</div>
+                                </form>
+                            </div>
+                            {/********************** checkout box end ***************************/}
+                            {/* shopping box */}
+                            <div className="shiping-box">
+                                <div className="row">
+                                    <div className="col-md-6 col-12">
+                                        <div className="calculate-shiping">
+                                            <h3 className='text-capitalize'>calculate shipping</h3>
+                                            <div className="outline-select">
+                                                <select>
+                                                    <option value="uk" className='text-capitalize'>united kingdom (UK)</option>
+                                                    <option value="usa" className='text-capitalize'>united states (USA) </option>
+                                                    <option value="pak" className='text-capitalize'>palistan</option>
+                                                    <option value="ind" className='text-capitalize'>india</option>
+                                                    <option value="np" className='text-capitalize'>nipal</option>
+                                                </select>
+                                                <span className='select-icon'>
+                                                    <i className='icofont-rounded-down'></i>
+                                                </span>
+                                            </div>
+                                            <div className="outline-select shipping-select">
+                                                <select>
+                                                    <option value="uk" className='text-capitalize'>london</option>
+                                                    <option value="usa" className='text-capitalize'>new york</option>
+                                                    <option value="pak" className='text-capitalize'>dhaka</option>
+                                                    <option value="ind" className='text-capitalize'>new delhi</option>
+                                                    <option value="np" className='text-capitalize'>kathmandu</option>
+                                                </select>
+                                                <span className='select-icon'>
+                                                    <i className='icofont-rounded-down'></i>
+                                                </span>
+                                            </div>
+                                            <input type="text" name='postalCode' id='postalCode' className='cart-page-input-text' placeholder='Postalcode/ZIP *' />
+                                            <button type="submit" className='text-capitalize'>update address</button>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6 col-12">
+                                        <div className="cart-overview">
+                                            <h3 className='text-capitalize'>cart total</h3>
+                                            <ul className='lab-ul'>
+                                                <li>
+                                                    <span className='text-capitalize pull-left'>cart subtotal</span>
+                                                    <p className='pull-right'>$ {cartSubtotal}</p>
+                                                </li>
+                                                <li>
+                                                    <span className='text-capitalize pull-left'>shipping & Handling</span>
+                                                    <p className='pull-right text-capitalize'>free shipping</p>
+                                                </li>
+                                                <li>
+                                                    <span className='text-capitalize pull-left'>order total</span>
+                                                    <p className='pull-right text-capitalize'>$ {orderTotal.toFixed(2)}</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </Container>
             </div>
