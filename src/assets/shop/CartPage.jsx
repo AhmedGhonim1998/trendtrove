@@ -5,6 +5,7 @@ import PageHeader from '../../components/PageHeader';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import deImgUrt from '../images/shop/del.png'
+import CheckOutPage from './CheckOutPage';
 const CartPage = () => {
     const [cartItmes, setCartItmes] = useState([]);
 
@@ -117,7 +118,9 @@ const CartPage = () => {
                                 </form>
                                 <form className='cart-checkout'>
                                     <input type="submit" value="Update Cart" />
-                                    <div className="">CheckoutPage</div>
+                                    <div className="">
+                                        <CheckOutPage/>
+                                    </div>
                                 </form>
                             </div>
                             {/********************** checkout box end ***************************/}
