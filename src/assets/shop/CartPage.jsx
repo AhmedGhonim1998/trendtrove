@@ -134,7 +134,7 @@ const CartPage = () => {
                                                 <select>
                                                     <option value="uk" className='text-capitalize'>united kingdom (UK)</option>
                                                     <option value="usa" className='text-capitalize'>united states (USA) </option>
-                                                    <option value="pak" className='text-capitalize'>palistan</option>
+                                                    <option value="pak" className='text-capitalize'>pakistan</option>
                                                     <option value="ind" className='text-capitalize'>india</option>
                                                     <option value="np" className='text-capitalize'>nipal</option>
                                                 </select>

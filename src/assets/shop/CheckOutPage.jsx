@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap';
+import { useLocation, useNavigate } from 'react-router-dom';
 const CheckOutPage = () => {
     const [show, setShow] = useState(false);
     const [activeTab, setActiveTab] = useState("visa");
@@ -15,6 +16,15 @@ const CheckOutPage = () => {
     }
     const handleClose = () => {
         setShow(false);
+    }
+    //direct to home page
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || "/"
+    const handleOrderConfirm = () => {
+        alert("Your Order is placed successfully!");
+        localStorage.removeItem("cart");
+        navigate(from, { replace: true })
     }
     return (
         <div className='modalCard'>
@@ -74,8 +84,7 @@ const CheckOutPage = () => {
                                                     <span className='text-capitalize'>card folder name</span>
                                                 </div>
                                                 <div className="inputbox">
-                                                    <input type="number" name='number' id='number' className='form-control' min="1" max="999" required />
-                                                    <span className='text-capitalize'> card number</span> <i className='fa fa-eye'></i>
+                                                    <input type="number" name='number' id='number' className='form-control' min="1" max="999" required placeholder='Enter your card number'/><i className='fa fa-eye'></i>
                                                 </div>
                                                 <div className="d-flex flex-row ">
                                                     <div className="inputbox">
@@ -88,7 +97,7 @@ const CheckOutPage = () => {
                                                     </div>
                                                 </div>
                                                 <div className="px-5 pay">
-                                                    <button className='text-capitalize btn btn-success btn-block'>order</button>
+                                                    <button className='text-capitalize btn btn-success btn-block' onClick={handleOrderConfirm}>order now</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -125,12 +134,14 @@ const CheckOutPage = () => {
                                                     </div>
                                                 </div>
                                                 <div className="px-5 pay">
-                                                    <button className='text-capitalize btn btn-success btn-block'>add paypal</button>
+                                                    <button className='text-capitalize btn btn-success btn-block' onClick={handleOrderConfirm}>add paypal</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                {/* payment desclaimer */}
+                                <p className='mt-3 px-4 p-Disclaimer'><em className='text-capitalize'>payment disclaimer : </em>In no event shall payment by owner for any material or service</p>
                             </div>
                         </div>
                     </div>
