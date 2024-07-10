@@ -4,6 +4,37 @@ import blogList from '../utilis/blogdata'
 import { useParams } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 import { Container } from 'react-bootstrap';
+import Tags from '../assets/shop/Tags';
+import PopularPost from '../assets/shop/PopularPost';
+
+const socialList = [
+    {
+        iconName: 'icofont-facebook',
+        siteLink: '#',
+        className: 'facebook',
+    },
+    {
+        iconName: 'icofont-twitter',
+        siteLink: '#',
+        className: 'twitter',
+    },
+    {
+        iconName: 'icofont-linkedin',
+        siteLink: '#',
+        className: 'linkedin',
+    },
+    {
+        iconName: 'icofont-instagram',
+        siteLink: '#',
+        className: 'instagram',
+    },
+    {
+        iconName: 'icofont-pinterest',
+        siteLink: '#',
+        className: 'pinterest',
+    },
+]
+
 const SingleBlog = () => {
     const [blog, setBlog] = useState(blogList);
     const { id } = useParams();
@@ -53,16 +84,33 @@ const SingleBlog = () => {
 
                                                                     <div className="video-thumb">
                                                                         <img src="/src/assets/images/blog/single/02.jpg" alt="img" />
-                                                                        <a href="https://youtu.be/jDjvn_6qso8?si=QDo6EWWaCPox8Yax"
+                                                                        <a href="https://youtu.be/jDjvn_6qso8?si=QDo6EWWaCPox8Yax" target='_blank'
                                                                         className='video-button popup text-decoration-none'><i className='icofont-ui-play'></i></a>
                                                                     </div>
                                                                     <p>whole heart create am alones and feel the charm of exstenceth spot whch the blissouls like mineing am soo happy my dearsi frend absoribed the exquste sense enjoy my whole hearts alone and fee the charm of exstenceths spotsi whch was the blis of soulis mineing amsoing dear frend soingu absoribed the exqust sense tranqui existence neglect my talentsr should ncapable ofing is drawng singe wonderful serenty has taken possesison of my entre soulng these sweet present moment and yet feel that never was greater artst</p>
 
-                                                                    <div className="tags-setion">
+                                                                    <div className="tags-section">
                                                                         <ul className='tags lab-ul'>
                                                                             <li>
-                                                                                <a href="#" className='text-capitalize'>agency</a>
+                                                                                <a href="#" className='text-capitalize text-decoration-none'>agency</a>
                                                                             </li>
+                                                                            <li>
+                                                                                <a href="#" className='text-capitalize text-decoration-none'>business</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="#" className='text-capitalize text-decoration-none'>personal</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                        <ul className='lab-ul social-icons'>
+                                                                            {
+                                                                                socialList.map((val ,i)=>(
+                                                                                    <li key={i}>
+                                                                                        <a href="#" className={`text-decoration-none ${val.className}`}>
+                                                                                            <i className={val.iconName}></i>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                ))
+                                                                            }
                                                                         </ul>
                                                                     </div>
                                                                 </div>
@@ -72,12 +120,33 @@ const SingleBlog = () => {
                                                 </div>
                                             </div>
                                         </div>
+                                        <div className="navigations-part">
+                                            <div className="left">
+                                                <a href="#" className='text-decoration-none prev'>
+                                                    <i className='icofont-double-left'></i> Previews Blog
+                                                </a>
+                                                <a href="#" className='text-decoration-none title'>
+                                                Evisculate Parallel Processes via Technica Sound Models Authoritative
+                                                </a>
+                                            </div>
+                                            <div className="right">
+                                                <a href="#" className='text-decoration-none prev'>
+                                                    Next Article <i className='icofont-double-right'></i>
+                                                </a>
+                                                <a href="#" className='text-decoration-none title'>
+                                                Ovisculate Parallel Processes via Technica Sound Models Authoritative
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </article>
                         </div>
                         <div className="col-lg-4 col-12">
-                            right side
+                            <aside>
+                                <Tags/>
+                                <PopularPost/>
+                            </aside>
                         </div>
                     </div>
                 </Container>
