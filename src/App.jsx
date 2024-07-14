@@ -11,6 +11,8 @@ import Bolg from './blog/Bolg'
 import SingleProduct from './assets/shop/SingleProduct'
 import CartPage from './assets/shop/CartPage'
 import SingleBlog from './blog/SingleBlog'
+import About from './about/About'
+import Contact from './contactPage/Contact'
 function App() {
 
 
@@ -25,6 +27,8 @@ function App() {
           <Route path='/shop/:id' element={<SingleProduct/>}/>
           <Route path='/cart-page' element={<CartPage/>}/>
           <Route path='/blog/:id' element={<SingleBlog />} />
+          <Route path='/about' element={<About/>} />
+          <Route path='/contact' element={<Contact/>} />
         </Routes>
       </div>
       <Footer />

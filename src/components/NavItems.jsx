@@ -33,7 +33,7 @@ export default function NavItems() {
                 <div className={`header-top d-md-none ${socialToggle ? "open" : ""}`}>
                     <Container>
                         <div className="header-top-area">
-                            <NavLink to="/signup" className="text-capitalize lab-btn me-3 text-decoration-none"><span>create account</span></NavLink>
+                            <NavLink to="/signup" className="text-capitalize lab-btn me-3 text-decoration-none "><span>create account</span></NavLink>
                             <NavLink to='/login' className='text-capitalize text-decoration-none'>login</NavLink>
                         </div>
                     </Container>
