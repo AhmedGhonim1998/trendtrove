@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import logo from "../assets/images/logo/logo.png";
 import { BsInfoSquareFill } from "react-icons/bs";
+import { AuthContext } from '../context/AuthProvider';
 export default function NavItems() {
     const [menuToggle, setMenuToggle] = useState(false);
     const [socialToggle, setSocialToggle] = useState(false);
     const [headerFixed, setHeaderFixed] = useState(false);
+
+    //auth info
+    const {user}= useContext(AuthContext);
     let scrollUp=()=>{
         window.scroll(0,0);
     }

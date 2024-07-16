@@ -13,7 +13,6 @@ import CartPage from './assets/shop/CartPage'
 import SingleBlog from './blog/SingleBlog'
 import About from './about/About'
 import Contact from './contactPage/Contact'
-import LoginDemo from './components/LoginDemo'
 function App() {
 
 const location = useLocation();
@@ -32,7 +31,6 @@ const shouldRenderNavAndFooter = location.pathname !== '/login';
           <Route path='/blog/:id' element={<SingleBlog />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/login' element={<LoginDemo />} />
         </Routes>
       </div>
       {shouldRenderNavAndFooter && <Footer />}
