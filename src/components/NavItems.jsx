@@ -11,6 +11,7 @@ export default function NavItems() {
 
     //auth info
     const {user}= useContext(AuthContext);
+    console.log(user)
     let scrollUp=()=>{
         window.scroll(0,0);
     }
