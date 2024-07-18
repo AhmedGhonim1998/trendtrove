@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
-import logo from "../assets/images/logo/logo.png";
+import logo from "/images/logo/logo.png";
 import { BsInfoSquareFill } from "react-icons/bs";
 import { AuthContext } from '../context/AuthProvider';
 export default function NavItems() {

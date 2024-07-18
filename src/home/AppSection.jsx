@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import appleImg from '../assets/images/app/01.jpg'
-import androidImg from '../assets/images/app/02.jpg'
+import appleImg from '/images/app/01.jpg'
+import androidImg from '/images/app/02.jpg'
 
 const btnText = "sign up for free";
 const title = "shop anytime any where";

@@ -79,11 +79,11 @@ const SingleBlog = () => {
                                                                         </cite>
                                                                     </blockquote>
                                                                     <p>whole heart create am alones and feel the charm of exstenceth spot whch the blissouls like mineing am soo happy my dearsi frend absoribed the exquste sense enjoy my whole hearts alone and fee the charm of exstenceths spotsi whch was the blis of soulis mineing amsoing dear frend soingu absoribed the exqust sense tranqui existence neglect my talentsr should ncapable ofing is drawng singe wonderful serenty has taken possesison of my entre soulng these sweet present moment and yet feel that never was greater artst</p>
-                                                                    <img src="/src/assets/images/blog/single/01.jpg" alt="img" />
+                                                                    <img src="/images/blog/single/01.jpg" alt="img" />
                                                                     <p>Serenity hasir taken poseson mying entre soung these sweet morngs spring whch enoywith whole heart create am alones and feel the charm of exstenceth spot whch the blissouls like mineing am soo happy my dearsi frend absoribed the exquste sense enjoy my whole hearts alone and fee the charm of exstenceths spotsi whch was the blis of soulis mineing amsoing dear frend soingu absoribed the exqust sense tranqui existence neglect my talentsr should ncapable ofing is drawng singe wonderful serenty has taken possesison of my entre soulng these sweet present moment and yet feel that never was greater artst</p>
 
                                                                     <div className="video-thumb">
-                                                                        <img src="/src/assets/images/blog/single/02.jpg" alt="img" />
+                                                                        <img src="/images/blog/single/02.jpg" alt="img" />
                                                                         <a href="https://youtu.be/jDjvn_6qso8?si=QDo6EWWaCPox8Yax" target='_blank'
                                                                         className='video-button popup text-decoration-none'><i className='icofont-ui-play'></i></a>
                                                                     </div>

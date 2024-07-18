@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from 'react-bootstrap';
 import CountUp from 'react-countup';
 import { Link } from 'react-router-dom';
-import imageInstructor from '../assets/images/instructor/01.png'
+import imageInstructor from '/images/instructor/01.png'
 const subTitle = "Why Choose Us";
 const title = "Become a Marchant";
 const desc = "Take courses on your any device with our app & learn all about business what you want. Just download & install & start to learn";

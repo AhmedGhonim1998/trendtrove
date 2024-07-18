@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import Rating from '../../components/Rating';
-import descImg from "../images/shop/01.jpg"
+import descImg from "/images/shop/01.jpg"
 const reviwtitle = "Add a Review";
 
 let ReviewList = [
