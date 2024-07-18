@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../context/AuthProvider'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 const title = "login"
@@ -45,10 +45,25 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
-        console.log(form)
+        const email = form.email.value;
+        const password = form.password.value;
+        login(email , password).then((result)=>{
+            const user = result.user;
+            alert("Login successfull");
+            navigate(from , {replace:true})
+        }).catch((error)=>{
+            const errorMsg = error.message;
+            setErrorMessage("Please provide valid email & password")
+        })
     }
     const handleRegister=()=>{
-
+        signUpWithGmail().then((result)=>{
+            const user = result.user;
+            navigate(from , {replace:true})
+        }).catch((error)=>{
+            const errorMsg = error.message;
+            setErrorMessage("Please provide valid email & password")
+        })
     }
 
     return (
@@ -63,6 +78,16 @@ const Login = () => {
                             </div>
                             <div className="form-group">
                                 <input type="password" name='password' id='password' placeholder='Password *' required />
+                            </div>
+                            {/* shoing message */}
+                            <div className="">
+                                {
+                                    errorMessage &&(
+                                        <div className="error-message text-danger mb-1">
+                                            {errorMessage}
+                                        </div>
+                                    )
+                                }
                             </div>
                             <div className="form-group">
                                 <div className="d-flex justify-content-between flex-wrap pt-sm-2">

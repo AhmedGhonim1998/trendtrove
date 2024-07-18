@@ -15,10 +15,11 @@ import About from './about/About'
 import Contact from './contactPage/Contact'
 import PrivateRoute from './privateRoute/PrivateRoute'
 import Login from './components/Login'
+import SignUp from './components/SignUp'
 function App() {
 
 const location = useLocation();
-const shouldRenderNavAndFooter = location.pathname !== '/login';
+const shouldRenderNavAndFooter = location.pathname !== '/login' && location.pathname !=='/sign-up';
 
   return (
     <>
@@ -34,6 +35,7 @@ const shouldRenderNavAndFooter = location.pathname !== '/login';
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login/>}/>
+          <Route path='/sign-up' element={<SignUp/>}/>
         </Routes>
       </div>
       {shouldRenderNavAndFooter && <Footer />}
