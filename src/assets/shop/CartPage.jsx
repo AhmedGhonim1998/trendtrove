@@ -4,7 +4,7 @@ import { json } from 'react-router-dom';
 import PageHeader from '../../components/PageHeader';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import deImgUrt from '../images/shop/del.png'
+import deImgUrt from '/images/shop/del.png'
 import CheckOutPage from './CheckOutPage';
 const CartPage = () => {
     const [cartItmes, setCartItmes] = useState([]);
