@@ -1,6 +1,6 @@
 /* @@@@@@@@@@@@@  Banner Section Start Here  @@@@@@@@@@@@@@ */
 .banner-section {
-    background-image: url(../images/bg-img/01.jpg);
+    background-image: url(../../images/bg-img/) !important;
     background-size: cover;
     padding-top: 170px;
     @extend %rel;
@@ -561,7 +561,7 @@
 /* @@@@@@@@@@@@@  Page Header Section Start Here  @@@@@@@@@@@@@@ */
 .pageheader-section {
     padding: 250px 0 100px;
-    background-image: url(../images/pageheader/bg/01.jpg);
+    background-image: url(../../../../public/images/bg/01.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
