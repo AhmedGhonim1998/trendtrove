@@ -13,6 +13,8 @@ import CartPage from './assets/shop/CartPage'
 import SingleBlog from './blog/SingleBlog'
 import About from './about/About'
 import Contact from './contactPage/Contact'
+import PrivateRoute from './privateRoute/PrivateRoute'
+import Login from './components/Login'
 function App() {
 
 const location = useLocation();
@@ -27,10 +29,11 @@ const shouldRenderNavAndFooter = location.pathname !== '/login';
           <Route path='/shop' element={<Shop />} />
           <Route path='/blog' element={<Bolg />} />
           <Route path='/shop/:id' element={<SingleProduct />} />
-          <Route path='/cart-page' element={<CartPage />} />
+          <Route path='/cart-page' element={<PrivateRoute><CartPage/></PrivateRoute>} />
           <Route path='/blog/:id' element={<SingleBlog />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/login' element={<Login/>}/>
         </Routes>
       </div>
       {shouldRenderNavAndFooter && <Footer />}
