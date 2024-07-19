@@ -11,12 +11,27 @@ import Rieview from './Rieview';
 import PopularPost from './PopularPost';
 import Tags from './Tags';
 const SingleProduct = () => {
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState({});
     const { id } = useParams();
+
+    const getSingleProduct = async () => {
+        try {
+            const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+            if (!response.ok) {
+                throw new Error('Failed to fetch product');
+            }
+            else {
+                const data = await response.json();
+                setProduct(data);
+            }
+        } catch (error) {
+            console.error('Error fetching product:', error);
+        }
+    };
     useEffect(() => {
-        fetch("/src/products.json").then(res => res.json()).then(data => setProduct(data))
-    }, [])
-    const resutl = product.filter((p) => p.id === id);
+
+        getSingleProduct();
+    }, [id]);
     return (
         <div>
             <PageHeader title={"OUR SHOP SINGLE"} currentPage={"Shop / single product"} />
@@ -48,13 +63,13 @@ const SingleProduct = () => {
                                                         }
                                                         className="mySwiper">
                                                         {
-                                                            resutl.map((item, i) => (
-                                                                <SwiperSlide key={i}>
+                                                            
+                                                                <SwiperSlide>
                                                                     <div className="single-thumb">
-                                                                        <img src={item.img} alt="img" />
+                                                                        <img src={product.image} alt="img" />
                                                                     </div>
                                                                 </SwiperSlide>
-                                                            ))
+                                                        
                                                         }
                                                     </Swiper>
                                                     <div className="pro-single-next">
@@ -70,9 +85,9 @@ const SingleProduct = () => {
                                         <div className="col-md-6 col-12">
                                             <div className="post-content">
                                                 <div className="">
-                                                    {
-                                                        resutl.map(item => <ProductDisplay key={item.id} item={item}/>)
-                                                    }
+                                                    
+                                                        
+                                                        <ProductDisplay item={product}/>
                                                 </div>
                                             </div>
                                         </div>
@@ -80,7 +95,7 @@ const SingleProduct = () => {
                                 </div>
                                 {/* reviews */}
                                 <div className="review">
-                                    <Rieview/>
+                                    <Rieview item={product}/>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +103,7 @@ const SingleProduct = () => {
                         {/* right side */}
                         <div className="col-lg-4 col-12">
                             <aside className='ps-lg-4'>
-                                <PopularPost/>
+                                <PopularPost />
                                 <Tags/>
                             </aside>
                         </div>

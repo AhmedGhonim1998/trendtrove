@@ -13,21 +13,18 @@ const ProductCards = ({gridList , products}) => {
                         {/* product images */}
                         <div className="product-thumb">
                             <div className="pro-thumb">
-                                <img src={product.img} alt="img" />
+                                <img src={product.image} alt="img" className='imageShop'/>
                             </div>
                             {/* product action links */}
                             <div className="product-action-link">
                                 <Link to={`/shop/${product.id}`} onClick={scrollUp} className="text-decoration-none"><i className='icofont-eye'></i></Link>
-                                <a href="#" className='text-decoration-none'>
-                                    <i className='icofont-heart'></i>
-                                </a>
                                 <Link to="/cart-page" className="text-decoration-none"><i className='icofont-cart'></i></Link>
                             </div>
                         </div>
                         {/* product content */}
                         <div className="product-content">
                             <h5>
-                                <Link to={`/shop/${product.id}`} className='text-decoration-none'>{product.name}</Link>
+                                <Link to={`/shop/${product.id}`} className='text-decoration-none'>{product.title}</Link>
                             </h5>
                             <p className='productRating'>
                                 <Rating/>

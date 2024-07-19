@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 const desc = "Energistia an deliver atactica metrcs after avsionary Apropria trnsition enterprise an sources applications emerging psd template.";
 const ProductDisplay = ({ item }) => {
-    const { name, id, price, seller, ratingsCount, quantity, img } = item;
-    const [preQuantity, steQuantity] = useState(quantity);
+    const { title, id, price, seller, ratingsCount, image } = item;
+    const [preQuantity, steQuantity] = useState(0);
     const [coupon, setCoupon] = useState("");
     const [size, setSize] = useState("Select Size");
     const [color, setColor] = useState("Select Color");
@@ -25,8 +25,8 @@ const ProductDisplay = ({ item }) => {
         e.preventDefault()
         const product = {
             id: id,
-            img: img,
-            name: name,
+            img: image,
+            name: title,
             price: price,
             quantity: preQuantity,
             size: size,
@@ -54,7 +54,7 @@ const ProductDisplay = ({ item }) => {
     return (
         <div>
             <div className="">
-                <h4>{name}</h4>
+                <h4>{item.title}</h4>
                 <p className='rating'>
                     <i className='icofont-star'></i>
                     <i className='icofont-star'></i>
@@ -63,9 +63,8 @@ const ProductDisplay = ({ item }) => {
                     <i className='icofont-star'></i>
                     <span> {ratingsCount} review</span>
                 </p>
-                <h4>${price}</h4>
-                <h6>{seller}</h6>
-                <p>{desc}</p>
+                <h4>${item.price}</h4>
+                <p>{item.description}</p>
             </div>
 
             {/* cart components */}

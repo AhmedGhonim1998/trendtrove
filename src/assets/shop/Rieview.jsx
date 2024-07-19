@@ -34,7 +34,7 @@ let ReviewList = [
         desc: "Enthusiast build innovativ initiatives before lonterm high-impact awesome theme seo psd porta monetize covalent leadership after without resource.",
     },
 ];
-const Rieview = () => {
+const Rieview = ({item}) => {
     const [reviewShow, setReviewShow] = useState(true)
     return (
         <>

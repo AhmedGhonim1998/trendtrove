@@ -5,3 +5,23 @@ body {
     font-weight: 100;
     font-style: normal;
 }
+.pro-thumb {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    .imageShop {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+.imageFetch{
+    position: relative;
+    width: 100px;
+    height: 50px;
+    .imgContainer{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
