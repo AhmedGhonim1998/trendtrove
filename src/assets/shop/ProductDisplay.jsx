@@ -1,28 +1,29 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-const desc = "Energistia an deliver atactica metrcs after avsionary Apropria trnsition enterprise an sources applications emerging psd template.";
+
 const ProductDisplay = ({ item }) => {
-    const { title, id, price, seller, ratingsCount, image } = item;
-    const [preQuantity, steQuantity] = useState(0);
+    const { title, id, price, image, rating, description } = item || {};
+    const [preQuantity, setQuantity] = useState(0);
     const [coupon, setCoupon] = useState("");
     const [size, setSize] = useState("Select Size");
     const [color, setColor] = useState("Select Color");
+
     const handleSizeChange = (e) => {
         setSize(e.target.value);
     }
-    const handleSizeColor = (e) => {
+    const handleColorChange = (e) => {
         setColor(e.target.value);
     }
     const handleDecrease = () => {
         if (preQuantity > 1) {
-            steQuantity(preQuantity - 1)
+            setQuantity(preQuantity - 1);
         }
     }
-    const handleIncecrease = () => {
-        steQuantity(preQuantity + 1)
+    const handleIncrease = () => {
+        setQuantity(preQuantity + 1);
     }
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         const product = {
             id: id,
             img: image,
@@ -32,7 +33,7 @@ const ProductDisplay = ({ item }) => {
             size: size,
             color: color,
             coupon: coupon
-        }
+        };
         const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
         const existingProductIndex = existingCart.findIndex((item) => item.id === id);
         if (existingProductIndex !== -1) {
@@ -40,34 +41,38 @@ const ProductDisplay = ({ item }) => {
         } else {
             existingCart.push(product);
         }
-        //update local storage
         localStorage.setItem("cart", JSON.stringify(existingCart));
-        //reset from fields
-        steQuantity(1);
+        setQuantity(1);
         setSize("Select Size");
-        setColor("select Color");
-        setCoupon("")
+        setColor("Select Color");
+        setCoupon("");
     }
-    let scrollUp=()=>{
-        window.scroll(0,0);
+
+    let scrollUp = () => {
+        window.scroll(0, 0);
     }
+
+    console.log(item); // Log the item to check its structure
+
     return (
         <div>
             <div className="">
-                <h4>{item.title}</h4>
+                <h4>{title}</h4>
                 <p className='rating'>
-                    <i className='icofont-star'></i>
-                    <i className='icofont-star'></i>
-                    <i className='icofont-star'></i>
-                    <i className='icofont-star'></i>
-                    <i className='icofont-star'></i>
-                    <span> {ratingsCount} review</span>
+                    {rating && (
+                        <>
+                            <i className='icofont-star'></i>
+                            <i className='icofont-star'></i>
+                            <i className='icofont-star'></i>
+                            <i className='icofont-star'></i>
+                            <i className='icofont-star'></i>
+                            <span> {rating.rate}</span>
+                        </>
+                    )}
                 </p>
-                <h4>${item.price}</h4>
-                <p>{item.description}</p>
+                <h4>${price}</h4>
+                <p>{description}</p>
             </div>
-
-            {/* cart components */}
             <div className="">
                 <form onSubmit={handleSubmit}>
                     <div className="select-product size">
@@ -82,7 +87,7 @@ const ProductDisplay = ({ item }) => {
                         <i className='icofont-rounded-down'></i>
                     </div>
                     <div className="select-product color">
-                        <select value={color} onChange={handleSizeColor}>
+                        <select value={color} onChange={handleColorChange}>
                             <option>Select color</option>
                             <option>Pink</option>
                             <option>Ash</option>
@@ -92,26 +97,31 @@ const ProductDisplay = ({ item }) => {
                         </select>
                         <i className='icofont-rounded-down'></i>
                     </div>
-
-                    {/* cart plus minus */}
                     <div className="cart-plus-minus">
                         <div className="dec qtybutton" onClick={handleDecrease}>-</div>
-                        <input className='cart-plus-minus-box' type="text" name='qtybutton' id='qtybutton' value={preQuantity} onChange={(e) => steQuantity(parseInt(e.target.value, 10))} />
-                        <div className="inc qtybutton" onClick={handleIncecrease}>+</div>
+                        <input
+                            className='cart-plus-minus-box'
+                            type="text"
+                            name='qtybutton'
+                            id='qtybutton'
+                            value={preQuantity}
+                            onChange={(e) => setQuantity(parseInt(e.target.value, 10))}
+                        />
+                        <div className="inc qtybutton" onClick={handleIncrease}>+</div>
                     </div>
-                    {/* coupon field */}
                     <div className="discount-code">
-                        <input type="text" placeholder='Enter Discount Code' onChange={(e) => setCoupon(e.target.value)} />
+                        <input
+                            type="text"
+                            placeholder='Enter Discount Code'
+                            onChange={(e) => setCoupon(e.target.value)}
+                        />
                     </div>
-
-                    {/* button section */}
                     <button type='submit' className='lab-btn text-capitalize text-white'>add to cart</button>
-                    <Link to="/cart-page" type='submit' className='lab-btn text-capitalize text-white bg-primary text-decoration-none' onClick={scrollUp}>check out</Link>
-
+                    <Link to="/cart-page" className='lab-btn text-capitalize text-white bg-primary text-decoration-none' onClick={scrollUp}>check out</Link>
                 </form>
             </div>
         </div>
-    )
+    );
 }
 
-export default ProductDisplay
+export default ProductDisplay;

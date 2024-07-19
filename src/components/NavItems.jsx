@@ -1,20 +1,22 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Form, Dropdown , Button } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import logo from "/images/logo/logo.png";
 import { BsInfoSquareFill } from "react-icons/bs";
 import { AuthContext } from '../context/AuthProvider';
+import userImage from '../assets/images/profile/profileUser.png'
 export default function NavItems() {
     const [menuToggle, setMenuToggle] = useState(false);
     const [socialToggle, setSocialToggle] = useState(false);
     const [headerFixed, setHeaderFixed] = useState(false);
 
-    //auth info
-    const {user}= useContext(AuthContext);
-    console.log(user)
-    let scrollUp=()=>{
-        window.scroll(0,0);
-    }
+    // Auth info
+    const { user, Logout } = useContext(AuthContext);
+
+    const scrollUp = () => {
+        window.scroll(0, 0);
+    };
+
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 200) {
@@ -68,9 +70,24 @@ export default function NavItems() {
                                         <li onClick={scrollUp}><Link to="/contact" className='text-capitalize text-decoration-none' onClick={() => setMenuToggle(false)}>contact</Link></li>
                                     </ul>
                                 </div>
+
                                 {/* sign in & login */}
-                                <Link to="/signup" className='text-capitalize text-decoration-none lab-btn me-3 d-none d-md-block'>create account</Link>
-                                <Link to="/login" className='text-capitalize text-decoration-none d-none d-md-block'>login</Link>
+                                {!user ? (
+                                    <>
+                                        <Link to="/sign-up" className='text-capitalize text-decoration-none lab-btn me-3 d-none d-md-block'>create account</Link>
+                                        <Link to="/login" className='text-capitalize text-decoration-none d-none d-md-block'>login</Link>
+                                    </>
+                                ) : (
+                                    <Dropdown className="logout-dropdown">
+                                        <Dropdown.Toggle as="div" className="d-flex align-items-center">
+                                            <img src={userImage} alt="Profile" className="rounded-circle" style={{ width: '40px', height: '40px', marginRight: '10px' }} />
+                                            
+                                        </Dropdown.Toggle>
+                                        <Dropdown.Menu align="right">
+                                            <Dropdown.Item onClick={Logout}>Logout</Dropdown.Item>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
+                                )}
 
                                 {/*menu toggler*/}
                                 <div onClick={() => setMenuToggle(!menuToggle)} className={`header-bar d-lg-none ${menuToggle ? "active" : ""}`}>
@@ -79,9 +96,16 @@ export default function NavItems() {
                                     <span></span>
                                 </div>
                                 {/* social toggler */}
-                                <div className='ellepsis-bar d-md-none' onClick={()=>setSocialToggle(!socialToggle)}>
-                                    <BsInfoSquareFill className='info'/>
+                                { 
+                                !user?(
+
+                                <div className='ellepsis-bar d-md-none' onClick={() => setSocialToggle(!socialToggle)}>
+                                    <BsInfoSquareFill className='info' />
                                 </div>
+                                ):(
+                                    <p></p>
+                                )
+                                }
                             </div>
                         </div>
                     </Container>

@@ -68,7 +68,7 @@ const CartPage = () => {
                                 <thead>
                                     <tr>
                                         <th className='text-capitalize cart-product'>product</th>
-                                        <th className='text-capitalize cart-price'>price</th>
+                                        <th className='text-capitalize cart-price price'>price</th>
                                         <th className='text-capitalize cart-quantity'>quatity</th>
                                         <th className='text-capitalize cart-toprice'>total</th>
                                         <th className='text-capitalize cart-edit'>edit</th>
@@ -87,7 +87,7 @@ const CartPage = () => {
                                                         <Link to="/shop" className='text-decoration-none'>{item.name}</Link>
                                                     </div>
                                                 </td>
-                                                <td className=''>
+                                                <td className='p-content price'>
                                                     $ {item.price}
                                                 </td>
                                                 <td className='cat-quantity'>

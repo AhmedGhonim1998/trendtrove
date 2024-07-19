@@ -87,7 +87,7 @@ const SingleProduct = () => {
                                                 <div className="">
                                                     
                                                         
-                                                        <ProductDisplay item={product}/>
+                                                        <ProductDisplay item={product} rating={product.rating}/>
                                                 </div>
                                             </div>
                                         </div>

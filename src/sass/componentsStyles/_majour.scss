@@ -25,3 +25,9 @@ body {
         object-fit: contain;
     }
 }
+@media (max-width:767px) {
+    .price{
+        display: none;
+    }
+    
+}
