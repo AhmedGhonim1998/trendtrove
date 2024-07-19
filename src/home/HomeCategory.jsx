@@ -46,7 +46,7 @@ const categoryList = [
 const HomeCategory = () => {
     return (
         <>
-            <div className='category-section style-4 padding-tb'>
+            <div className='category-section style-4 padding-tb ps-2 pe-2'>
                 <Container>
                     {/* section header */}
                     <div className="section-header text-center">

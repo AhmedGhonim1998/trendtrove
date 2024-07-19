@@ -48,7 +48,7 @@ export default function NavItems() {
 
                 {/********************************** header bottom ***********************************/}
                 <div className="header-bottom">
-                    <Container>
+                    <Container className=''>
                         <div className="header-wrapper">
                             {/** logo **/}
                             <div className="logo-search-acte">
@@ -80,7 +80,7 @@ export default function NavItems() {
                                 ) : (
                                     <Dropdown className="logout-dropdown">
                                         <Dropdown.Toggle as="div" className="d-flex align-items-center">
-                                            <img src={userImage} alt="Profile" className="rounded-circle" style={{ width: '40px', height: '40px', marginRight: '10px' }} />
+                                            <img src={userImage} alt="Profile" className="rounded-circle" style={{ width: '40px', height: '40px', marginRight: '' }} />
                                             
                                         </Dropdown.Toggle>
                                         <Dropdown.Menu align="right">
@@ -90,7 +90,7 @@ export default function NavItems() {
                                 )}
 
                                 {/*menu toggler*/}
-                                <div onClick={() => setMenuToggle(!menuToggle)} className={`header-bar d-lg-none ${menuToggle ? "active" : ""}`}>
+                                <div onClick={() => setMenuToggle(!menuToggle)} className={`header-bar headerBar ms-3 d-lg-none ${menuToggle ? "active" : ""}`}>
                                     <span></span>
                                     <span></span>
                                     <span></span>

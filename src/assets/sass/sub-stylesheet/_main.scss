@@ -1831,7 +1831,7 @@
         }
         .section-wrapper {
             height: 400px;
-            background: url(../../../assets/images/bg-img/bg.png) no-repeat;
+            background: url(/public/images/clients/bg.png) no-repeat;
             background-position: center;
             background-size: 75% 100%;
             @include breakpoint(max-sm) {
