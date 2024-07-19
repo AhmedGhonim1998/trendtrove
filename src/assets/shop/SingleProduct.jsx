@@ -25,7 +25,7 @@ const SingleProduct = () => {
                 <Container>
                     <div className="row justify-content-center">
                         <div className="col-lg-8 col-12">
-                            <article>
+                            <div>
                                 <div className="product-details">
                                     <div className="row align-items-center">
                                         <div className="col-md-6 col-12">
@@ -82,7 +82,7 @@ const SingleProduct = () => {
                                 <div className="review">
                                     <Rieview/>
                                 </div>
-                            </article>
+                            </div>
                         </div>
 
                         {/* right side */}
