@@ -11,12 +11,13 @@ const ProductCards = ({gridList , products}) => {
                 products.map((product,i)=>(<div key={i} className='col-lg-4 col-md-6 col-12 mb-4'>
                     <div className="product-item h-100">
                         {/* product images */}
-                        <div className="product-thumb">
+                        <div className="product-thumb d-flex justify-content-center align-items-center">
                             <div className="pro-thumb">
                                 <img src={product.image} alt="img" className='imageShop'/>
                             </div>
                             {/* product action links */}
                             <div className="product-action-link">
+                                
                                 <Link to={`/shop/${product.id}`} onClick={scrollUp} className="text-decoration-none"><i className='icofont-eye'></i></Link>
                                 <Link to="/cart-page" className="text-decoration-none"><i className='icofont-cart'></i></Link>
                             </div>

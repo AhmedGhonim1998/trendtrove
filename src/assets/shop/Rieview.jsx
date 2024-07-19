@@ -2,32 +2,36 @@ import React from 'react'
 import { useState } from 'react';
 import Rating from '../../components/Rating';
 import descImg from "/images/shop/01.jpg"
+import image1 from "../images/instructor/01.jpg"
+import image2 from "../images/instructor/02.jpg"
+import image3 from "../images/instructor/03.jpg"
+import image4 from "../images/instructor/04.jpg"
 const reviwtitle = "Add a Review";
 
 let ReviewList = [
     {
-        imgUrl: "/src/assets/images/instructor/01.jpg",
+        imgUrl: image1,
         imgAlt: "Client thumb",
         name: "Ganelon Boileau",
         date: "Posted on Jun 10, 2022 at 6:57 am",
         desc: "Enthusiast build innovativ initiatives before lonterm high-impact awesome theme seo psd porta monetize covalent leadership after without resource.",
     },
     {
-        imgUrl: "/src/assets/images/instructor/02.jpg",
+        imgUrl: image2,
         imgAlt: "Client thumb",
         name: "Morgana Cailot",
         date: "Posted on Jun 10, 2022 at 6:57 am",
         desc: "Enthusiast build innovativ initiatives before lonterm high-impact awesome theme seo psd porta monetize covalent leadership after without resource.",
     },
     {
-        imgUrl: "/src/assets/images/instructor/03.jpg",
+        imgUrl: image3,
         imgAlt: "Client thumb",
         name: "Telford Bois",
         date: "Posted on Jun 10, 2022 at 6:57 am",
         desc: "Enthusiast build innovativ initiatives before lonterm high-impact awesome theme seo psd porta monetize covalent leadership after without resource.",
     },
     {
-        imgUrl: "/src/assets/images/instructor/04.jpg",
+        imgUrl: image4,
         imgAlt: "Client thumb",
         name: "Cher Daviau",
         date: "Posted on Jun 10, 2022 at 6:57 am",
@@ -49,9 +53,6 @@ const Rieview = ({item}) => {
                         {
                             ReviewList.map((review , i)=>(
                                 <li key={i}>
-                                    <div className="post-thumb">
-                                        <img src={review.imgUrl} alt="img" />
-                                    </div>
                                     <div className="post-content">
                                         <div className='entry-meta'>
                                             <div className="posted-on">
