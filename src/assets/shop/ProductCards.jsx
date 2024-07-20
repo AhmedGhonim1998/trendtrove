@@ -34,9 +34,9 @@ const ProductCards = ({gridList , products}) => {
                         </div>
                     </div><div className="product-list-item">
                         {/* product images */}
-                        <div className="product-thumb">
+                        <div className="product-thumb d-flex justify-content-center align-items-center">
                             <div className="pro-thumb">
-                                <img src={product.img} alt="img" />
+                                <img src={product.image} alt="img" className='imageShop'/>
                             </div>
                             {/* product action links */}
                             <div className="product-action-link">
@@ -50,7 +50,7 @@ const ProductCards = ({gridList , products}) => {
                         {/* product content */}
                         <div className="product-content">
                             <h5>
-                                <Link to={`/shop/${product.id}`} className='text-decoration-none'>{product.name}</Link>
+                                <Link to={`/shop/${product.id}`} className='text-decoration-none'>{product.title}</Link>
                             </h5>
                             <p className='productRating'>
                                 <Rating/>
