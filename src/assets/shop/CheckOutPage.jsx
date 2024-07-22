@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
+import VisaPayment from './VisaPayment';
 const CheckOutPage = () => {
     const [show, setShow] = useState(false);
     const [activeTab, setActiveTab] = useState("visa");
@@ -75,31 +76,7 @@ const CheckOutPage = () => {
                                     >
                                         {/* visa tab content */}
                                         <div className="mt-4 mx-4">
-                                            <div className="text-center">
-                                                <h5 className='text-capitalize'>credit card</h5>
-                                            </div>
-                                            <div className="form mt-3">
-                                                <div className="inputbox">
-                                                    <input type="text" name='name' id='name' className='form-control' required />
-                                                    <span className='text-capitalize'>card folder name</span>
-                                                </div>
-                                                <div className="inputbox">
-                                                    <input type="number" name='number' id='number' className='form-control' min="1" max="999" required placeholder='Enter your card number'/><i className='fa fa-eye'></i>
-                                                </div>
-                                                <div className="d-flex flex-row ">
-                                                    <div className="inputbox">
-                                                        <input type="date" name='number' id='number' className='form-control' min="1" max="999" required />
-
-                                                    </div>
-                                                    <div className="inputbox">
-                                                        <input type="text" name='number' id='number' className='form-control' min="1" max="999" required />
-                                                        <span className='text-capitalize'>cvv</span>
-                                                    </div>
-                                                </div>
-                                                <div className="px-5 pay">
-                                                    <button className='text-capitalize btn btn-success btn-block' onClick={handleOrderConfirm}>order now</button>
-                                                </div>
-                                            </div>
+                                            <VisaPayment handleOrderConfirm={handleOrderConfirm} />
                                         </div>
                                     </div>
 

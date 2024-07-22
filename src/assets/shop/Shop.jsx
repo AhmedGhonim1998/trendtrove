@@ -8,8 +8,6 @@ import ShopCategory from './ShopCategory';
 import PopularPost from './PopularPost';
 import Tags from './Tags';
 
-const showResult = "showing 01-12 of 139 results";
-
 const Shop = () => {
     const [gridList, setGridList] = useState(true);
     const [products, setProducts] = useState([]);
@@ -36,9 +34,10 @@ const Shop = () => {
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
 
+    // Function to change the current page
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
-    };
+    }
 
     const menuItems = ["All", ...new Set(products.map((val) => val.category))];
 
@@ -52,7 +51,9 @@ const Shop = () => {
             const filtered = products.filter(product => product.category === category);
             setFilteredProducts(filtered);
         }
-    };
+    }
+
+    const showResult = `showing ${indexOfFirstProduct + 1}-${Math.min(indexOfLastProduct, filteredProducts.length)} of ${filteredProducts.length} results`;
 
     return (
         <div>
@@ -92,8 +93,8 @@ const Shop = () => {
                                     menuItems={menuItems}
                                     selectedCategory={selectedCategory}
                                 />
-                                <PopularPost/>
-                                <Tags/>
+                                <PopularPost />
+                                <Tags />
                             </aside>
                         </div>
                     </div>

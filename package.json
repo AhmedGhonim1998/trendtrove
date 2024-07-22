@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@paypal/react-paypal-js": "^8.5.0",
     "@popperjs/core": "^2.11.8",
+    "@stripe/react-stripe-js": "^2.7.3",
+    "@stripe/stripe-js": "^4.1.0",
     "bootstrap": "^5.3.3",
     "firebase": "^10.12.3",
     "match-sorter": "^6.3.4",
