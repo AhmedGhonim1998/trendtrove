@@ -75,7 +75,7 @@ const Shop = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <ProductCards gridList={gridList} products={currentProducts} />
+                                    <ProductCards gridList={gridList} products={currentProducts} item={products} />
                                 </div>
                                 <PageNation
                                     productsPerPage={productsPerPage}
